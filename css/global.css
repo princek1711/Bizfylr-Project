@@ -1,0 +1,146 @@
+/* =====================
+   CSS RESET & VARIABLES
+===================== */
+:root {
+  --bg-dark: #0b0f1a;
+  --primary: #7c7cff;
+  --secondary: #f5c2a8;
+  --accent: #2de2e6;
+  --text-light: #ffffff;
+  --text-muted: #b8b8c5;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* =====================
+   BLURRED BACKGROUND
+===================== */
+.background-blur {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.blur {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  opacity: 0.6;
+  border-radius: 50%;
+}
+
+.blur.one {
+  background: var(--primary);
+  top: -100px;
+  left: -100px;
+}
+
+.blur.two {
+  background: var(--secondary);
+  bottom: -120px;
+  right: -120px;
+}
+
+.blur.three {
+  background: var(--accent);
+  top: 40%;
+  left: 60%;
+}
+
+/* =====================
+   GLASS EFFECT
+===================== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn {
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(124,124,255,0.4);
+}
+
+/* =====================
+   LINKS
+===================== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =====================
+   header css
+===================== */
+
+.mega-parent {
+  position: relative;
+}
+
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: -200px;
+  width: 600px;
+  padding: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mega-menu h4 {
+  margin-bottom: 10px;
+}
+
+.mega-menu a {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+.mega-menu a:hover {
+  color: #fff;
+}
